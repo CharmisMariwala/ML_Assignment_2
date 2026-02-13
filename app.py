@@ -66,7 +66,7 @@ lr.fit(X_train, y_train)
 lr_metrics = evaluate_model(lr, X_test, y_test)
 print("Logistic Regression:", lr_metrics)
 
-joblib.dump(lr, "logistic_regression.pkl")
+joblib.dump(lr, "model/logistic_regression.pkl")
 
 # Decision Tree
 dt = DecisionTreeClassifier(random_state=42)
@@ -75,7 +75,7 @@ dt.fit(X_train, y_train)
 dt_metrics = evaluate_model(dt, X_test, y_test)
 print("Decision Tree:", dt_metrics)
 
-joblib.dump(dt, "decision_tree.pkl")
+joblib.dump(dt, "model/decision_tree.pkl")
 
 # K-Nearest Neighbors
 knn = KNeighborsClassifier(n_neighbors=5)
@@ -84,7 +84,7 @@ knn.fit(X_train, y_train)
 knn_metrics = evaluate_model(knn, X_test, y_test)
 print("KNN:", knn_metrics)
 
-joblib.dump(knn, "knn.pkl")
+joblib.dump(knn, "model/knn.pkl")
 
 # Naive Bayes
 nb = GaussianNB()
@@ -93,7 +93,7 @@ nb.fit(X_train, y_train)
 nb_metrics = evaluate_model(nb, X_test, y_test)
 print("Naive Bayes:", nb_metrics)
 
-joblib.dump(nb, "naive_bayes.pkl")
+joblib.dump(nb, "model/naive_bayes.pkl")
 
 # Random Forest
 rf = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -102,7 +102,7 @@ rf.fit(X_train, y_train)
 rf_metrics = evaluate_model(rf, X_test, y_test)
 print("Random Forest:", rf_metrics)
 
-joblib.dump(rf, "random_forest.pkl")
+joblib.dump(rf, "model/random_forest.pkl")
 
 # XGBoost
 xgb = XGBClassifier(
@@ -115,7 +115,7 @@ xgb.fit(X_train, y_train)
 xgb_metrics = evaluate_model(xgb, X_test, y_test)
 print("XGBoost:", xgb_metrics)
 
-joblib.dump(xgb, "xgboost.pkl")
+joblib.dump(xgb, "model/xgboost.pkl")
 
 #Create Comparison Table and Save it for Readme
 results = pd.DataFrame([
@@ -135,12 +135,12 @@ st.title("Heart Disease Prediction Models")
 st.write("Upload test data and select a model to see performance.")
 
 models = {
-    "Logistic Regression": joblib.load("logistic_regression.pkl"),
-    "Decision Tree": joblib.load("decision_tree.pkl"),
-    "KNN": joblib.load("knn.pkl"),
-    "Naive Bayes": joblib.load("naive_bayes.pkl"),
-    "Random Forest": joblib.load("random_forest.pkl"),
-    "XGBoost": joblib.load("xgboost.pkl")
+    "Logistic Regression": joblib.load("model/logistic_regression.pkl"),
+    "Decision Tree": joblib.load("model/decision_tree.pkl"),
+    "KNN": joblib.load("model/knn.pkl"),
+    "Naive Bayes": joblib.load("model/naive_bayes.pkl"),
+    "Random Forest": joblib.load("model/random_forest.pkl"),
+    "XGBoost": joblib.load("model/xgboost.pkl")
 }
 
 # Dropdown to select model
