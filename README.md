@@ -61,7 +61,7 @@ A Streamlit-based web application is developed that allows users to upload test 
 ---
 
 ## 7. Deployment
-The Streamlit application was deployed using Streamlit Community Cloud. The deployed app provides an interactive interface to evaluate the trained machine learning models.
+The Streamlit application was deployed using Streamlit Community Cloud. The deployed app provides an interactive interface to evaluate the trained machine learning models. Link : https://mlassignment2-gniguv9uzymggwtfxzglfh.streamlit.app/
 
 ---
 
